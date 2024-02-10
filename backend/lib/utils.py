@@ -135,23 +135,6 @@ def plot_decision_boundary(clf, X, y):
     plt.close()
 
 
-def random_sample(src_folder, dst_folder, n_images):
-    if not os.path.exists(dst_folder):
-        os.makedirs(dst_folder)
-
-    for root, dirs, files in tqdm(os.walk(src_folder)):
-        for dir_name in (dirs):
-            src_dir_path = os.path.join(src_folder, dir_name)
-            dst_dir_path = os.path.join(dst_folder, dir_name)
-            if not os.path.exists(dst_dir_path):
-                os.makedirs(dst_dir_path)
-            files_to_copy = random.sample(os.listdir(src_dir_path), n_images)
-            for file_name in files_to_copy:
-                src_file_path = os.path.join(src_dir_path, file_name)
-                dst_file_path = os.path.join(dst_dir_path, file_name)
-                shutil.copy(src_file_path, dst_file_path)
-
-
 def augment_images(path_to_load, path_to_save):
     for root, dirs, files in os.walk(path_to_load):
         for file_name in tqdm(files):
@@ -196,41 +179,6 @@ def augment_images(path_to_load, path_to_save):
                 path_to_save, f'{file_name[:-4]}_pb.jpg'), img_persp_backward)
 
 
-def generate_keypoints(folder_path, output_dir, csv_name):
-    import re
-    csv_path = os.path.join(output_dir, csv_name)
-    hands = mp.solutions.hands.Hands(
-        static_image_mode=True, max_num_hands=1, min_detection_confidence=0.5)
-    data_list = []
-    for root, dirs, files in os.walk(folder_path):
-        for i, filename in enumerate(tqdm(files)):
-            path_to_loadimg = os.path.join(root, filename)
-            file_class = filename.split("_")[0]
-            if path_to_loadimg[-4:] not in [".png", ".jpg"]:
-                continue
-            image = cv2.imread(path_to_loadimg)
-            image_height, image_width, _ = image.shape
-            results = hands.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-
-            if not results.multi_hand_landmarks:
-                os.remove(path_to_loadimg)
-                continue
-
-            for hand_landmarks in results.multi_hand_landmarks:
-                x_i = [[min(int(landmark.x * image_width), image_width - 1),
-                        min(int(landmark.y * image_height), image_height - 1)] 
-                        for landmark in hand_landmarks.landmark]
-                x_i_normalized = pre_process_landmark(x_i)
-                data_list.append(
-                    [*x_i_normalized, file_class, path_to_loadimg])
-
-    xy = ["x", "y"]
-    df = pd.DataFrame(data_list, columns=[
-                      *[f'{i // 2}{xy[i % 2]}' for i in range(42)], 'Label', "File_Path"])
-    df.to_csv(csv_path, index=False)
-    hands.close()
-
-
 def visualization(img_path, path_to_save, cartesian_plot=False, shuffle=True):
     hands = mp.solutions.hands.Hands(
         static_image_mode=True, max_num_hands=2, min_detection_confidence=0.5)
@@ -266,14 +214,6 @@ def visualization(img_path, path_to_save, cartesian_plot=False, shuffle=True):
                     mp_drawing.plot_landmarks(
                         hand_world_landmarks, mp_hands.HAND_CONNECTIONS, azimuth=5)
     hands.close()
-
-
-def rename_files(path):
-    for root, dirs, files in os.walk(path):
-        for filename in files:
-            parent_folder = os.path.basename(os.path.abspath(root))
-            os.rename(os.path.join(root, filename), os.path.join(
-                root, parent_folder + "_" + filename))
 
 
 def get_args():

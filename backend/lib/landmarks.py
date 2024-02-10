@@ -1,7 +1,7 @@
 from utils import * 
 
 """
-python landmarks.py /media/SSD/DATASETS/LERMO/images/ /media/SSD/DATASETS/LERMO/images/landmarks/ Adilson_L_dns.csv Adilson
+python landmarks.py ../images/ ../landmarks/ name.csv actor
 """
 
 def generate_keypoints(folder_path, output_dir, csv_name, actor):
