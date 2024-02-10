@@ -1,0 +1,46 @@
+NAME,Experiment Name,Accuracy,F1-score,Precision
+MERGED_AUG,K-Nearest Neighbors,0.8701,0.8476,0.8695
+MERGED_AUG,SVM,0.8566,0.8343,0.8511
+MERGED_AUG,Random Forest,0.8445,0.8219,0.8468
+MERGED_AUG,Naive Bayes,0.6694,0.6061,0.7177
+,,,,,
+Actor2,K-Nearest Neighbors,0.729,0.6682,0.6945
+Actor2,SVM,0.7227,0.6569,0.7227,0.7057
+Actor2,Random Forest,0.6141,0.5572,0.5805
+Actor2,Naive Bayes,0.5353,0.4801,0.5172
+,,,,,
+Actor2_aug,K-Nearest Neighbors,0.7504,0.698,0.7236
+Actor2_aug,SVM,0.7293,0.6739,0.7293,0.7331
+Actor2_aug,Random Forest,0.6319,0.5786,0.6082
+Actor2_aug,Naive Bayes,0.5387,0.4825,0.5209
+,,,,,
+Actor1,K-Nearest Neighbors,0.7764,0.7424,0.7539
+Actor1,SVM,0.7653,0.7362,0.7653,0.7666
+Actor1,Random Forest,0.6654,0.6276,0.6893
+Actor1,Naive Bayes,0.5089,0.4862,0.6022
+,,,,,
+Actor1_aug,K-Nearest Neighbors,0.7919,0.7502,0.7578
+Actor1_aug,SVM,0.7687,0.7371,0.76
+Actor1_aug,Random Forest,0.7203,0.6745,0.7187
+Actor1_aug,Naive Bayes,0.5626,0.5053,0.588
+,,,,,
+Actor4,K-Nearest Neighbors,0.8325,0.8001,0.8506
+Actor4,SVM,0.849,0.8275,0.849,0.8868
+Actor4,Random Forest,0.8011,0.7845,0.8299
+Actor4,Naive Bayes,0.6771,0.6801,0.7688
+,,,,,
+Actor4_aug,K-Nearest Neighbors,0.847,0.8246,0.8496
+Actor4_aug,SVM,0.8594,0.8432,0.8868
+Actor4_aug,Random Forest,0.8101,0.7946,0.8482
+Actor4_aug,Naive Bayes,0.6941,0.6494,0.7348
+,,,,,
+Actor3_aug,K-Nearest Neighbors,0.8579,0.834,0.8889
+Actor3_aug,SVM,0.8712,0.8439,0.8712,0.8598
+Actor3_aug,Random Forest,0.8217,0.8059,0.8515
+Actor3_aug,Naive Bayes,0.6578,0.5866,0.6707
+,,,,,
+Actor3,K-Nearest Neighbors,0.8503,0.8284,0.8396
+Actor3,SVM,0.8181,0.7827,0.8181,0.8556
+Actor3,Random Forest,0.7931,0.7631,0.7982
+Actor3,Naive Bayes,0.6925,0.6580,0.7150
+,,,,,
