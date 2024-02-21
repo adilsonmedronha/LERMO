@@ -1,0 +1,151 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;}
+
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: 15px !important;
+ }
+
+ .msg {
+  transition: all 0.2s ease-in-out;
+  background-color: #3d73bd;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0.3em 1.5em;
+  border-radius: 0.4em;
+  font-size: 1.5vh;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    line-height: 1em;
+    padding: 2em 0;
+  }
+
+.tentative-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1em);
+    grid-gap: 0.15em;
+    font-size: 1em;
+    height: 1em;
+    margin: 0;
+    line-height: 0;
+}
+
+.letter{
+  background-color: transparent; 
+  text-transform:uppercase;
+  color: transparent !important;
+  text-shadow: 0 0 0 white !important;
+  font-size: 0.55em;
+  animation: 0.15s ease-out 0s 1 normal none running type;
+  aspect-ratio: 1;
+  font-weight: 600;
+  border-radius: 10%;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  --happy-jump: 55%;
+  cursor: pointer;
+}
+
+.form-control {
+  line-height: 1.2!important;
+}
+
+.correct-letter {
+  background-color: green;
+}
+
+.row-board {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 0);
+  grid-gap: 0.15em;
+  margin: 5px;
+  padding: 0;
+}
+
+.not-clickable {
+  cursor: not-allowed!important;
+}
+
+
+.single-board-row {
+  display: grid;
+  grid-template-columns: repeat(5, 3em);
+  grid-gap: 0.43em;
+  font-size: 1em;
+  margin: 0;
+  line-height: 0;
+}
+
+#single-letter-how-to-play {
+  font-size: 1.6em
+}
+
+.contains-letter {
+  background-color: rgb(150, 149, 10);
+}
+
+.incorrect-letter {
+  background-color: red;
+}
+
+.mini-letter {
+      font-size: 1em;
+      height: 1.75em;
+      vertical-align: 15%;
+      width: 1.75em;
+      justify-content: center;
+      margin: 0;
+      border-radius: 10%;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      border: 1px solid #ced4da;
+}
+
+.clickable-cursor {
+  cursor: pointer;
+}
+
+.normal-cursor {
+  cursor: default;
+}
+
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.alphabet-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner circle{
+  stroke: red !important;
+}
+
+
+.new-p {
+  margin-bottom: 0.6rem !important;
+}

@@ -1,0 +1,9 @@
+<div class="keyboard" style=" font-size: 2.6vh">
+        <button id="kbd-{{letter}}"class="btn-custom" *ngFor="let letter of firstRow">{{letter}}</button>
+        <button id="kbd-{{letter}}"class="btn-custom" *ngFor="let letter of secondRow">{{letter}}</button>
+        <button id="kbd-backspace" class="btn-custom">
+            <img src="../../assets/icons/close-back.svg" width="32px" height="32px" style="display: flex; fill: white; font-size:10px!important">
+        </button>
+        <button id="kbd-{{letter}}" class="btn-custom" *ngFor="let letter of thirdRow">{{letter}}</button>
+        <button id="kbd-enter" class="btn-custom">ENTER</button>
+</div>

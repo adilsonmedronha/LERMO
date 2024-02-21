@@ -1,0 +1,48 @@
+.keyboard {
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+    padding: 0 0.5em 0.3em 0.5em;
+    height: 30vh;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(32, 1fr);
+    grid-gap: 0.25em;
+    box-sizing: border-box;
+}
+
+.btn-custom {
+    touch-action: manipulation;
+    outline: none;
+    background-color: #1b232e;
+    grid-column: span 3;
+    display: flex;
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8%;
+    font-weight: 500;
+    // font-family: 'Mitr', sans-serif;
+    cursor: pointer;
+    border: none;
+    color: #FAFAFF;
+}
+
+#kbd-A {
+    grid-column: 2 / span 3;
+}
+
+#kbd-Z {
+    grid-column: 3 / span 3;
+}
+
+#kbd-backspace {
+    grid-column: 30 / span 3;
+}
+
+#kbd-enter {
+    grid-column: 25 / span 8;
+    font-size: 0.9em;
+}

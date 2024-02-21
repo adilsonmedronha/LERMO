@@ -1,0 +1,24 @@
+<body [class]="clickable ? 'clickable-cursor' : 'cursor-normal'" (click)="onGameOver()" (mouseenter)="this.isGameOver()">
+  
+  <div class="header">
+    <h1 class="header-title">
+      <div (click)="$event.stopPropagation()">
+        <button *ngIf="isVideo" class="button-header" (click)="routeToNormalPage()">
+          <img src="../assets/icons/arrow.svg">
+        </button>
+      </div>
+
+      <strong class="px-4">LERMO</strong>
+
+      <div (click)="$event.stopPropagation()">
+        <button *ngIf="!isNotSupported" class="button-header" style="padding: 8px;" (click)="openHowToPlayModal()">
+          <img src="../assets/icons/faq.svg">
+        </button>
+      </div>
+    </h1>
+  </div>
+  
+  <main>
+    <router-outlet> </router-outlet>
+  </main>
+</body>

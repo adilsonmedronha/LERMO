@@ -1,0 +1,129 @@
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .abs {
+    position: absolute;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: lightblue;
+    }
+  }
+  
+  body {
+    bottom: 0;
+    background-color: #2C394B;
+    font-family: "Titillium Web", sans-serif;
+    color: white;
+    // height: calc(100% - var(safe-area-inset-top));
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: 0px 0px;
+    overflow: hidden;
+  }
+  
+  .container {
+    position: absolute;
+    background-color: #596e73;
+    width: 100%;
+    max-height: 100%;
+  }
+  
+  .input_video {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &.selfie {
+      transform: scale(-1, 1);
+    }
+  }
+  
+  .input_image {
+    position: absolute;
+  }
+  
+  .canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .output_canvas {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+mat-progress-spinner {
+  box-shadow: 0 0 0 10px #ffffff inset;
+  border-radius: 50%;
+}
+
+.game-area {
+  display: flex;
+}
+
+/* Styles for mobile screens (you can adjust the max-width as needed) */
+@media (max-width: 767px) {
+  .spinner {
+    width: 25px!important;
+    height: 25px!important;
+    left: 15% !important;
+  }
+
+
+  .game-area {
+    flex-direction: column-reverse;
+  }
+
+  .output_canvas {
+    height:  15vh!important;
+    padding-right: 15%;
+    padding-left: 15%;
+    width: 100%!important;
+    margin-bottom: 10px;
+  }
+
+  .alphabet-grid {
+    display: none;
+  }
+
+  .hold {
+    grid-gap: 0.08em!important;
+  }
+
+  .board {
+    height: 0!important;
+  }
+
+  .keyboard {
+    height: min(46.511627907em, 16vh)!important;
+    grid-gap: 0.1em!important;
+  }
+
+  .tentative-row {
+    grid-gap: 0.08em;
+  }
+}

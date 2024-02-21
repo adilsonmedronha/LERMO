@@ -1,0 +1,21 @@
+.board{
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+.hold {
+    font-size: 1em;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1em);
+    grid-gap: 0.15em;
+    margin: 5px;
+    padding: 0
+}

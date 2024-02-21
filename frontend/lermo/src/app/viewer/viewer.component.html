@@ -1,0 +1,34 @@
+<div class="canvas-container" style="flex-direction: column">
+
+  <div class="mb-3" class="game-area">
+    <app-board [board]="board" [signChange]="signChange" (nextLetter)="nextLetterChange($event)" [activeRow]="activeRow" (try)="computeTry($event)" (play)="computePlay($event)"></app-board>
+    <div class="mx-3 position-relative">
+      <canvas #outputCanvas class="output_canvas" width="700" height="530" style="height: 54vh; width: 40vw; border-radius: 4%;"></canvas>
+      <div class="position-absolute top-0 start-0 d-flex align-items-center justify-content-center w-100 h-100 spinner-container">
+        <mat-spinner class="spinner" style="width: 50px; height: 50px; border-radius: 50%"
+          [mode]="'determinate'"
+          [value]="predictionsCount"
+          [strokeWidth]="60"
+        ></mat-spinner>
+      </div>
+      <div class="mt-1">
+        <div class="alphabet-grid pt-3">
+          <ng-container *ngFor="let letter of getAlphabet()">
+            <div class="alphabet-item">
+              <img style="width: 5vh" [src]="'../assets/signs/' + letter + '_sign.svg'">
+            </div>
+          </ng-container>
+          <div class="alphabet-item">
+            <img style="width: 5vh" src="../assets/signs/enviar_labeled.svg">
+          </div>
+          <div class="alphabet-item">
+            <img style="width: 5vh" src="../assets/signs/deletar_labeled.svg">
+          </div>
+        </div>      
+      </div>
+    </div>
+    <div>
+      <video hidden class="input_video" autoplay></video>
+    </div>
+  </div>
+</div>

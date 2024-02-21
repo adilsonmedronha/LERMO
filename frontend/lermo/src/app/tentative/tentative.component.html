@@ -1,0 +1,7 @@
+<div class="row tentative-row">
+    <div inputmode='none' [attr.contenteditable]="isActive" id="row-{{rowNum}}-letter-{{i}}"
+        (keyup)="onDigitInput($event, i)" maxlength="1"
+        [ngClass]="{'letter-disabled': !isActive, 'not-clickable': !isActive}"
+        onkeypress="return (this.innerText.length <= 0)" class="form-control letter"
+        *ngFor="let number of [0,1,2,3,4]; let i = index">{{tentative[i]}}</div>
+</div>

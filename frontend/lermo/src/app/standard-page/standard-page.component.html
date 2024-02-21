@@ -1,0 +1,6 @@
+<main>
+    <div class="mb-3">
+        <app-board [activeRow]="activeIdx" [board]="board" (try)="computeTry($event)" (play)="computePlay($event)"></app-board>
+    </div>
+</main>
+<!-- <app-keyboard [board]="board" [activeIdx]=""></app-keyboard> -->

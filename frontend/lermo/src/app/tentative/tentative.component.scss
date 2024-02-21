@@ -1,0 +1,53 @@
+.tentative-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1em);
+    grid-gap: 0.15em;
+    font-size: 1em;
+    height: 1em;
+    margin: 0;
+    line-height: 0;
+}
+
+.letter-empty{
+    background-color: transparent;
+    border: 0.125em solid white;
+    padding: 0; 
+    align-items: center;
+    outline: none;
+}
+
+.letter{
+    background-color: transparent; 
+    text-transform:uppercase;
+    color: transparent !important;
+    text-shadow: 0 0 0 white !important;
+    font-size: 0.55em;
+    animation: 0.15s ease-out 0s 1 normal none running type;
+    aspect-ratio: 1;
+    font-weight: 600;
+    border-radius: 10%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    --happy-jump: 55%;
+    cursor: pointer;
+}
+
+.not-clickable {
+    cursor: not-allowed!important;
+}
+
+.letter-disabled {
+    border-color: #949494;
+    background-color: #212b38;
+}
+
+.form-control {
+    line-height: 1.2!important;
+}
+
+.correct-letter {
+    background-color: green;
+}

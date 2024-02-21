@@ -1,0 +1,7 @@
+<div class="mb-3" >
+   <div class="board">
+      <div class="hold">
+         <app-tentative [rowNum]="i" [tentative]="this.board[i]" (guess)="successfullGuess($event)" [isActive]="activeIdx == i" *ngFor="let number of [0,1,2,3,4,5]; let i = index"></app-tentative>
+      </div>
+   </div>
+</div>

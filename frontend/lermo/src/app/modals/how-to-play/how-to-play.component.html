@@ -1,0 +1,41 @@
+<p class="new-p">After submitting the guess (word), the colors represent:</p>
+
+<div class="row-board" style="justify-content: center; margin-bottom: 3em">
+<div class="row single-board-row" style="font-size: .8em !important;">
+    <div id="single-letter-how-to-play" maxlength="1" class="form-control letter not-clickable"
+        [ngClass]="letter === 'L' ? 'correct-letter' : ''"
+        *ngFor="let letter of ['L', 'E', 'R', 'M', 'O']; let j = index">{{letter}}</div>
+</div>
+</div>
+
+<p class="new-p">
+<span
+    class="mini-letter not-clickable correct-letter">L</span> is in the word and in the correct position.
+</p>
+
+<div class="row-board" style="justify-content: center; margin-bottom: 3em">
+<div class="row single-board-row" style="font-size: .8em !important;">
+    <div id="single-letter-how-to-play" maxlength="1" class="form-control letter not-clickable"
+        [ngClass]="letter === 'L' ? 'contains-letter' : ''"
+        *ngFor="let letter of ['L', 'E', 'R', 'M', 'O']; let j = index">{{letter}}</div>
+</div>
+</div>
+
+<p class="new-p">
+<span
+    class="mini-letter not-clickable contains-letter">L</span> is in the word, but in wrong position.
+</p>
+
+
+<div class="row-board" style="justify-content: center; margin-bottom: 3em">
+<div class="row single-board-row" style="font-size: .8em !important;">
+    <div id="single-letter-how-to-play" maxlength="1" class="form-control letter not-clickable"
+        [ngClass]="letter === 'L' ? 'incorrect-letter' : ''"
+        *ngFor="let letter of ['L', 'E', 'R', 'M', 'O']; let j = index">{{letter}}</div>
+</div>
+</div>
+
+<p class="new-p">
+<span
+    class="mini-letter not-clickable incorrect-letter">L</span> is not in the word anywhere.
+</p>

@@ -1,0 +1,39 @@
+<div style="display: flex;justify-content: center;">
+    <div style="flex-shrink: 0;margin: 0; min-height: 1.5vh;">
+      <div class="msg"
+      [@state]="animationState"
+      >NOT IN WORD LIST</div>
+    </div>
+</div>
+<div style="display: flex; flex-direction: column;" #childElement>
+    <div class="board">
+        <div class="hold">
+            <div *ngFor="let number of [0,1,2,3,4,5]; let rowIdx = index">
+                <div class="row tentative-row">
+                    <div inputmode='none' [attr.contenteditable]="isActive(rowIdx)" id="row-{{rowIdx}}-letter-{{j}}"
+                        (keyup)="onDigitInput($event, '', j)" maxlength="1" (click)="this.activeCol = j; keepFocus()"
+                        [ngClass]="{'letter-disabled': !isActive(rowIdx), 'not-clickable': !isActive(rowIdx)}"
+                        onkeypress="return (this.innerText.length <= 0)"
+                        (keypress)="onKeyPress($event)" class="form-control letter"
+                        *ngFor="let number of [0,1,2,3,4]; let j = index" (blur)="keepFocus()">{{board[rowIdx][j]}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-3">
+        <div class="keyboard" style=" font-size: 2.6vh">
+            <button id="kbd-{{letter}}" class="btn-custom" (click)="onKeyboardClick($event, letter)"
+                *ngFor="let letter of firstRow">{{letter}}</button>
+            <button id="kbd-{{letter}}" class="btn-custom" (click)="onKeyboardClick($event, letter)"
+                *ngFor="let letter of secondRow">{{letter}}</button>
+            <button id="kbd-backspace" class="btn-custom" (click)="onKeyboardClick($event, 'Deletar')">
+                <img src="../../assets/icons/close-back.svg" width="32px" height="32px"
+                    style="display: flex; fill: white; font-size:10px!important">
+            </button>
+            <button id="kbd-{{letter}}" class="btn-custom" (click)="onKeyboardClick($event, letter)"
+                *ngFor="let letter of thirdRow">{{letter}}</button>
+            <button id="kbd-enter" (click)="onKeyboardClick($event, 'Enter')" class="btn-custom">ENTER</button>
+        </div>
+    </div>
+</div>

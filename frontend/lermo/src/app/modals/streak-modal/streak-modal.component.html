@@ -1,0 +1,22 @@
+<div class="box">
+    <h3 class="my-3" style="text-align: center">{{storage.statistics.actual_streak == 0 ? 'GAME OVER!' : 'CONGRATULATIONS!'}}</h3>
+    <div id="stats-table" style="font-size: 1.4vh;">
+        <strong>{{storage.statistics.games_played}}</strong>
+        <p>
+            GAMES PLAYED
+        </p>
+        <strong>{{getVictoryPercentage()}}%</strong>
+        <p>WIN</p>
+        <strong>{{storage.statistics.actual_streak}}</strong>
+        <p> CURRENT STREAK
+        </p>
+        <strong>{{storage.statistics.best_streak}}</strong>
+        <p>MAX STREAK</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <p style="margin-bottom: .5rem">NEXT WORD IN:</p>
+        <strong style="font-size: 2rem; margin-bottom: .5em">
+            {{this.timeDiff.hours + ':' + this.timeDiff.minutes + ':' + this.timeDiff.seconds}}
+        </strong>
+    </div>
+</div>
