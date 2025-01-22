@@ -1,5 +1,5 @@
 # LERMO 
-(https://lermo.app/) is a web game that merges machine learning and gamification for practicing sign language fingerspelling. Our paper can be found in the AAAI-24 proceedings [coming soon]. 
+(https://lermo.app/) is a web game that merges machine learning and gamification for practicing sign language fingerspelling. Our paper can be found [here](https://ojs.aaai.org/index.php/AAAI/article/view/30384) in AAAI-24 proceeding. 
 
 ![Alt text](backend/utils/lermo-poster-overview.jpg "a title")
 
